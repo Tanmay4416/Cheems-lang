@@ -3,6 +3,14 @@ const grammar = require("./cheemslang.js");
 
 const parser = new nearley.Parser(nearley.Grammar.fromCompiled(grammar));
 
-parser.feed("567");
+try {
 
-console.log(parser.results);
+    parser.feed("bol-vro ( 45.7+5*2 )");
+    console.log("Parse succeeded" , parser.results);
+
+} catch (error) {
+     
+    console.log(`Parse failed: ${error.message}`);
+
+}
+
