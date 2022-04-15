@@ -1,0 +1,20 @@
+{
+  "type": "var_assignment",
+  "varname": "n",
+  "value": {
+    "type": "binary_expression",
+    "left": 5,
+    "operator": "*",
+    "right": {
+      "type": "binary_expression",
+      "left": 6,
+      "operator": "+",
+      "right": {
+        "type": "binary_expression",
+        "left": 7,
+        "operator": "/",
+        "right": 98
+      }
+    }
+  }
+}

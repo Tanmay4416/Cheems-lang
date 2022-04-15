@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/Tanmay4416/Cheems-lang#readme",
   "dependencies": {
+    "mz": "^2.7.0",
     "nearley": "^2.20.1"
   }
 }

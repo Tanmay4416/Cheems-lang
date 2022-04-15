@@ -47,7 +47,9 @@ var_assignment -> identifier _ ":==" _ expression {%
             }
         %}
 
-identifier -> [a-z]:+ {% id %}
+identifier -> [a-z]:+ {%
+        data => data[0].join("")
+    %}
 
 number 
     -> digits "." digits {%
