@@ -1,11 +1,11 @@
-i :== 1
-n :== 10
-a :== 1
-b :== 1
+vro-ye-hai i :== 1
+vro-ye-hai n :== 10
+vro-ye-hai a :== 1
+vro-ye-hai b :== 1
 jab-tak-vro ( i <= n ) [
     bol-vro (a)
-    temp :== a + b
-    a :== b
-    b :== temp
-    i :== i + 1
+    vro-ye-hai temp :== a + b
+    vro-ye-hai a :== b
+    vro-ye-hai b :== temp
+    vro-ye-hai i :== i + 1
 ]

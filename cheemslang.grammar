@@ -63,12 +63,12 @@ operator
     | "<="  {% id %}
     | "="  {% id %}
 
-var_assignment -> identifier _ ":==" _ expression {%
+var_assignment -> "vro-ye-hai" __ identifier _ ":==" _ expression {%
             data => {
                 return {
                     type: "var_assignment",
-                    varname: data[0],
-                    value: data[4]
+                    varname: data[2],
+                    value: data[6]
                 }
             }
         %}

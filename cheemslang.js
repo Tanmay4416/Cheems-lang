@@ -59,13 +59,14 @@ var grammar = {
     {"name": "operator$string$2", "symbols": [{"literal":"<"}, {"literal":"="}], "postprocess": function joiner(d) {return d.join('');}},
     {"name": "operator", "symbols": ["operator$string$2"], "postprocess": id},
     {"name": "operator", "symbols": [{"literal":"="}], "postprocess": id},
-    {"name": "var_assignment$string$1", "symbols": [{"literal":":"}, {"literal":"="}, {"literal":"="}], "postprocess": function joiner(d) {return d.join('');}},
-    {"name": "var_assignment", "symbols": ["identifier", "_", "var_assignment$string$1", "_", "expression"], "postprocess": 
+    {"name": "var_assignment$string$1", "symbols": [{"literal":"v"}, {"literal":"r"}, {"literal":"o"}, {"literal":"-"}, {"literal":"y"}, {"literal":"e"}, {"literal":"-"}, {"literal":"h"}, {"literal":"a"}, {"literal":"i"}], "postprocess": function joiner(d) {return d.join('');}},
+    {"name": "var_assignment$string$2", "symbols": [{"literal":":"}, {"literal":"="}, {"literal":"="}], "postprocess": function joiner(d) {return d.join('');}},
+    {"name": "var_assignment", "symbols": ["var_assignment$string$1", "__", "identifier", "_", "var_assignment$string$2", "_", "expression"], "postprocess": 
         data => {
             return {
                 type: "var_assignment",
-                varname: data[0],
-                value: data[4]
+                varname: data[2],
+                value: data[6]
             }
         }
                 },
