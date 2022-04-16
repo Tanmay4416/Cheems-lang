@@ -1,6 +1,27 @@
+program -> statements  {% id %}
+
+statements
+    ->  _ statement _  {%
+            data => [data[1]]
+        %}
+    |   _ statement _ "\r" "\n" statements  {%
+            data => [data[1], ...data[5]]
+        %}
+
 statement
     -> var_assignment  {% id %}
     | print_statement  {% id %}
+    | while_loop        {% id %}
+
+while_loop -> "jab-tak-vro" _ "(" _ binary_expression _ ")" _ "[" _ "\r" "\n" statements "\r" "\n" _ "]"  {%
+            data => {
+                return {
+                    type: "while_loop",
+                    condition: data[4],
+                    body: data[12]
+                }
+            }
+        %}
 
 print_statement -> "bol-vro" _ "(" _ expression _ ")" {%
             data => {
@@ -36,6 +57,11 @@ operator
     | "-"  {% id %}
     | "*"  {% id %}
     | "/"  {% id %}
+    | ">"  {% id %}
+    | "<"  {% id %}
+    | ">="  {% id %}
+    | "<="  {% id %}
+    | "="  {% id %}
 
 var_assignment -> identifier _ ":==" _ expression {%
             data => {

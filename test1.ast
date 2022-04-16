@@ -1,20 +1,30 @@
-{
-  "type": "var_assignment",
-  "varname": "n",
-  "value": {
-    "type": "binary_expression",
-    "left": 5,
-    "operator": "*",
-    "right": {
+[
+  {
+    "type": "var_assignment",
+    "varname": "n",
+    "value": 1
+  },
+  {
+    "type": "var_assignment",
+    "varname": "m",
+    "value": {
       "type": "binary_expression",
-      "left": 6,
-      "operator": "+",
+      "left": "n",
+      "operator": "*",
       "right": {
         "type": "binary_expression",
-        "left": 7,
-        "operator": "/",
-        "right": 98
+        "left": 4,
+        "operator": "+",
+        "right": 6
       }
     }
+  },
+  {
+    "type": "print_statement",
+    "expression": "n"
+  },
+  {
+    "type": "print_statement",
+    "expression": "m"
   }
-}
+]

@@ -1,0 +1,67 @@
+[
+  {
+    "type": "var_assignment",
+    "varname": "i",
+    "value": 1
+  },
+  {
+    "type": "var_assignment",
+    "varname": "n",
+    "value": 10
+  },
+  {
+    "type": "var_assignment",
+    "varname": "a",
+    "value": 1
+  },
+  {
+    "type": "var_assignment",
+    "varname": "b",
+    "value": 1
+  },
+  {
+    "type": "while_loop",
+    "condition": {
+      "type": "binary_expression",
+      "left": "i",
+      "operator": "<=",
+      "right": "n"
+    },
+    "body": [
+      {
+        "type": "print_statement",
+        "expression": "a"
+      },
+      {
+        "type": "var_assignment",
+        "varname": "temp",
+        "value": {
+          "type": "binary_expression",
+          "left": "a",
+          "operator": "+",
+          "right": "b"
+        }
+      },
+      {
+        "type": "var_assignment",
+        "varname": "a",
+        "value": "b"
+      },
+      {
+        "type": "var_assignment",
+        "varname": "b",
+        "value": "temp"
+      },
+      {
+        "type": "var_assignment",
+        "varname": "i",
+        "value": {
+          "type": "binary_expression",
+          "left": "i",
+          "operator": "+",
+          "right": 1
+        }
+      }
+    ]
+  }
+]
